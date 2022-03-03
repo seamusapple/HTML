@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Storage</title>
+</head>
+<body>
+	<div id="result">
+		<script type="text/javascript">
+			if (typeof(Storage) !== "undefined") {
+				// Store
+				localStorage.setItem("lastname", "Gates");
+				// Retrieve
+				document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+			} else {
+				document.getElementById("result").innerHTML = "抱歉！您的浏览器不支持 Web Storage ...";
+			}
+		</script>
+
+	</div>
+
+	<div id="clickresult">
+		<script type="text/javascript">
+			function clickCounter() {
+				if (typeof(Storage) !== "undefined") {
+					if (localStorage.clickcount) {
+						localStorage.clickcount = Number(localStorage.clickcount)+1;
+					} else {
+						localStorage.clickcount = 1;
+					}
+					document.getElementById("clickresult").innerHTML = "您已经点击这个按钮 " + localStorage.clickcount + " 次。";
+				} else {
+					document.getElementById("clickresult").innerHTML = "抱歉！您的浏览器不支持 Web Storage ...";
+				}
+			}
+		</script>
+	</div>
+	<br />
+	<p><button onclick="clickCounter()" type="button">请点击这里！</button></p>
+	<p>请点击按钮使计数器递增。</p>
+	<p>请关闭浏览器或标签页，然后再试一次，计数器将继续计数（不会重置）。</p>
+
+	<div id="clickresultsession">
+		<script type="text/javascript">
+			function sessionClickCounter() {
+				if (typeof(Storage) !== "undefined") {
+					if (sessionStorage.clickcount) {
+						sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+					} else {
+						sessionStorage.clickcount = 1;
+					}
+					document.getElementById("clickresultsession").innerHTML = "在本 session 中，您已经点击这个按钮 " + sessionStorage.clickcount + " 次。";
+				} else {
+					document.getElementById("clickresultsession").innerHTML = "抱歉！您的浏览器不支持 Web Storage ...";
+				}
+			}
+		</script>
+	</div>
+	<br />
+	<p><button onclick="sessionClickCounter()" type="button">请点击这里！</button></p>
+	<p>请点击按钮使计数器递增。</p>
+	<p>请关闭浏览器或标签页，然后再试一次，计数器将重置。</p>
+</body>
+</html>

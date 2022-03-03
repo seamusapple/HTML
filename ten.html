@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas</title>
+</head>
+<body>
+	<img id="eg_landscape" src="eg_landscape.jpeg" width="200" height="100" alt="The landscape">
+	<canvas id="myCanvas" width="200" height="100" style="border: 1px solid #c3c3c3;">
+		Your browser does not support the canvas element.
+	</canvas>
+	
+	<script type="text/javascript">
+		
+		var c = document.getElementById("myCanvas");
+		var cxt = c.getContext("2d");
+		
+		// 1.
+		// cxt.moveTo(10,10);
+		// cxt.lineTo(150,50);
+		// cxt.lineTo(10,50);
+		// cxt.stroke();
+
+		// 2. 
+		// cxt.fillStyle = "#FF0000";
+		// cxt.fillRect(0,0,150,75);
+
+		// 3. 
+		// cxt.fillStyle="#FF0000";
+		// cxt.beginPath();
+		// cxt.arc(70,80,15,0,Math.PI*2,true);
+		// cxt.closePath();
+		// cxt.fill();
+
+		// 4.
+		// var grd=cxt.createLinearGradient(0,0,175,50);
+		// grd.addColorStop(0,"#FF0000");
+		// grd.addColorStop(1,"#00FF00");
+		// cxt.fillStyle=grd;
+		// cxt.fillRect(0,0,175,50);
+
+    // 5.
+    window.onload = function() {
+    	cxt.drawImage(img, 10, 10);
+    	var img = document.getElementById("eg_landscape");
+    }
+	</script>
+
+	<br />
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
+		<polygon points="100,10 40,180 190,60 10,60 160,180" style="fill: red;stroke: blue;stroke-width:3;fill-rule: evenodd;" />
+	</svg>
+
+	<object height="100" width="300" data="horse.mp3"></object>
+	<embed height="100" width="300" src="horse.mp3"></embed>
+	<audio controls="controls">
+		<source src="horse.mp3" type="audio/mp3" />
+		<embed height="100" width="300" src="horse.mp3"></embed>
+	</audio>
+	<br />
+
+	<p><a href="horse.mp3">播放马叫声</a></p>
+	<script type="text/javascript" src="http://mediaplayer.yahoo.com/js"></script>
+	<br />
+
+	<video width="320" height="240" controls="controls" autoplay="autoplay">
+		<source src="movie.ogg" type="video/ogg" />
+		<object data="movie.mp4" width="320" height="240">
+			<embed width="320" height="240" src="movie.swf"></embed>
+		</object>
+	</video>
+	<br />
+
+	<embed src="http://player.youku.com/player.php/sid/XMzI2NTc4NTMy/v.swf" width="480" height="400" type="application/x-shockwave-flash"></embed>
+
+	<br />
+	<h2>点击该链接来播放这个对象</h2>
+
+	<a href="movie.ogg">播放视频文件</a>
+	<br />
+
+	<iframe width="420" height="345" src="https://www.youtube.com/embed/ih1l6wb7LhU>autoplay=1&mute=1&loop=1&controls=0"></iframe>
+</body>
+</html>

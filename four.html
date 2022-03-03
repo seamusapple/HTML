@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.cities {
+			background-color: black;
+			color: white;
+			margin: 20px;
+			padding: 20px;
+		}
+		span.red {
+			color: red;
+			margin: 20px;
+			padding: 20px;
+		}
+		#myHead {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+	</style>
+	<title>Title</title>
+</head>
+<body>
+	<p><a href="http://www.w3school.com.cn" target="myiFrame">W3School.com.cn</a></p>
+	<h1 id="myHead">My <span class="red">Important</span> Heading</h1>
+
+	<h1>我的第一段 JavaScript </h1>
+	<button type="button" onclick="document.getElementById('demo').innerHTML=Date()">
+		点击我来显示日期和时间
+	</button>
+
+	<h1>使用 JavaScript 更改文本</h1>
+
+	<p> 本例把 "Hello JavaScript!" 写入 id="demo" 的 HTML 元素内: </p>
+
+	<p id="demo"></p>
+	<p id="color1">等待被改变style</p>
+	<script>
+		function myFunction() {
+			document.getElementById("color1").style.fontSize = "25px";
+			document.getElementById("color1").style.color = "red";
+			document.getElementById("color1").style.backgroundColor = "yellow";
+		}
+	</script>
+	<noscript>抱歉，您的浏览器不支持 JS！ </noscript>
+	<button type="button" onclick="myFunction()">点击我改变颜色！</button>
+
+	<script>document.getElementById("demo").innerHTML = "Hello JavaScript!" </script>
+	
+	<div class="cities">
+		<h2>London</h2>
+		<p>
+			London is the capital city of England. 
+			It is the most populous city in the United Kingdom, 
+			with a metropolitan area of over 13 million inhabitants.
+		</p>
+	</div>
+	<div class="cities">
+		<h2>Paris</h2>
+		<p>Paris is the capital and most populous city of France.</p>
+	</div>
+
+	<div class="cities">
+		<h2>Tokyo</h2>
+		<p>Tokyo is the capital of Japan, the center of the Greater Tokyo Area, and the most populous metropolitan area in the world.</p>
+	</div>
+	<h1>Class 与 ID 的差异</h1>
+
+	<p>一个类名可以由多个 HTML 元素使用，而一个 id 名称只能由页面中的一个 HTML 元素使用: </p>
+
+	<!-- 拥有唯一 id 的元素 -->
+	<h1 id="myHead"> 我的城市 </h1>
+
+	<!-- 拥有相同类名的多个元素 -->
+	<h2 class="cities">上海</h2>
+	<p>中国最大的经济城市。</p>
+
+	<h2 class="cities">深圳</h2>
+	<p>中国最具创新力的城市。</p>
+
+	<h2 class="cities">北京</h2>
+	<p>中国的首都。</p>
+
+	<iframe src="http://www.baidu.com" width="80%" height="200" frameborder="0" name="myiFrame"></iframe>
+</body>
+</html>

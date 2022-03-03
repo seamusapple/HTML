@@ -1,0 +1,74 @@
+<!-- <!DOCTYPE html>
+<html manifest="demo_html.appcache">
+<head>
+	<title>CachedPage</title>
+</head>
+<body>
+	<script type="text/javascript" src="demo_time.js"></script>
+	<p id="timePara">
+		<button onclick="getDateTime()">获得日期和事件</button>
+	</p>
+	<p><img src="w3school_banner.gif"></p>
+	<p>请打卡<a href="html15_html_manifest.html" target="_blank">这个页面</a>，然后脱机浏览，重新加载页面。页面中的脚本和图像仍然可用。</p>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Web worker</title>
+</head>
+<body>
+
+	<p>计数：<output id="result"></output></p>
+	<button onclick="startWorker()">开始 Worker</button>
+	<button onclick="stopWorker()">停止 Worker</button>
+	<br /><br />
+
+	<script type="text/javascript">
+		var w;
+
+		function startWorker() {
+			if (typeof(Worker) !== "undefined") {
+				if (typeof(w) == "undefined") {
+					w=new Worker("demo_workers.js");
+				}
+				w.onmessage = function (event) {
+					document.getElementById("result").innerHTML=event.data;
+				}
+			} else {
+				document.getElementById("result").innerHTML="Sorry, your browser does not support Web Workers..."
+			}
+		}
+
+		function stopWorker() {
+			w.terminate();
+			w = undefined;
+		}
+	</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Web SSE</title>
+</head>
+<body>
+
+<h1>获得服务器更新</h1>
+<div id="result"></div>
+
+<script type="text/javascript">
+	if (typeof(EventSource) !== "undefined") {
+		var source=new EventSource("demo_see.php");
+		source.onmessage=function(event) {
+			document.getElementById("result").innerHTML=event.data + "<br />";
+		} 
+	}	else {
+		document.getElementById("result").innerHTML="抱歉，您的浏览器不支持 server-sent 事件...";
+	}
+</script>
+</body>
+</html>

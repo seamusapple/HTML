@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+</head>
+<body>
+
+<!-- action -->
+<form action="demo_form.asp">
+	<!-- input -->
+	First name: <br />
+	<input type="text" name="firstname">
+	<br />
+	Last name: <br />
+	<input type="text" name="lastname">
+	<br />
+
+	<!-- select -->
+	<input type="radio" name="sex" value="male" checked="checked">Male
+	<input type="radio" name="sex" value="female">Female
+	<br />
+
+	<!-- submit -->
+	<input type="submit" value="Submit">
+	<br />
+
+	<!-- fieldset -->
+	<fieldset>
+		<legend>Personal information:</legend>
+		First name:<br />
+		<input type="text" name="firstname" value="Mickey">
+		<br />
+		Last name:<br />
+		<input type="text" name="lastname" value="Mouse">
+		<br />
+		<br />
+		<input type="submit" value="Submit">
+	</fieldset>
+
+</form>
+
+<p>请注意表单本身是不可见的。</p>
+
+<p>同时请注意文本字段的默认宽度是 20 个字符。</p>
+<br />
+
+<form action="action_page.php" target="_blank" method="get" autocomplete="on" novalidate="novalidate">
+	<label for="fname">First name:</label><br />
+	<input type="text" id="fname" name="fname" value="Bill"><br />
+	<label for="lname">Last name:</label><br />
+	<input type="text" id="lname" name="lname" value="Gates"><br />
+	<br />
+	<input type="submit" value="提交">
+
+	<p>
+		如果您点击提交按钮，form-data 会被发送到名为 "/action_page.php" 的页面。
+	</p>
+	<br />
+
+	<select name="cars">
+		<option value="volvo">Volvo</option>
+		<option value="saab">Saab</option>
+		<option value="fiat" selected="selected">Fiat</option>
+		<option value="audi">Audi</option>
+	</select>
+
+	<textarea name="message" rows="10" cols="30">
+The cat was playing in the garden.
+	</textarea>
+	<br />
+
+	<button type="button" onclick="alert('Hello World!')">
+		Click Me!
+	</button>
+	<br />
+
+	<input list="browsers" name="browser" />
+	<datalist id="browsers">
+		<option value="Internet Explorer">
+		<option value="Firefox">
+		<option value="Chrome">
+		<option value="Opera"></option>
+		<option value="Safari"></option>
+	</datalist>
+	<br /> 
+
+	<input type="number" name="quantity" min="0" max="500" step="50" value="50" />
+	<input type="submit" name="submit">
+	<br />
+
+	Birthday: 
+	<input type="date" name="bday">
+	<br />
+
+	Select your fav color:
+	<input type="color" name="favcolor" />
+	<br />
+
+	<input type="range" name="points" min="0" max="10" />
+	<br />
+
+	Birthday (month and year):
+	<input type="month" name="bdaymonth" />
+	<br />
+
+	Select a week:
+	<input type="week" name="week_year" />
+	<br />
+
+	Select a time:
+	<input type="time" name="use_time" />
+	<br />
+
+	Birthday (date and time):
+	<input type="datetime" name="bdaytime" />
+	<br />
+
+	Birthday (date and time):
+	<input type="datetime-local" name="bdaytime" />
+	<br />
+
+	Email:
+	<input type="email" name="email" />
+	<br />
+
+	Search Google:
+	<input type="search" name="googlesearch" />
+	<br />
+
+	Telephone:
+	<input type="tel" name="usrtel" />
+	<br />
+
+	Add your homepage
+	<input type="url" name="homepage" />
+	<br />
+
+</form>
+
+<br />
+<form action="demo_form.asp" method="get">
+		First name: <input type="text" name="fname" placeholder="First Name" /><br />
+		Last name: <input type="text" name="lname" required="required" /><br />
+		<input type="submit" value="提交" /><br />
+		<input type="submit" formaction="demo_admin.asp" value="以管理员身份提交" />
+</form>
+
+<br />
+<form action="demo_form.asp" method="post">
+		First name: <input type="text" name="fname" /><br />
+		<input type="submit" value="提交" /><br />
+		<input type="submit" formenctype="multipart/form-data" value="以 Multipart/form-data 编码提交" />
+</form>
+
+<br />
+<h1>input list 属性</h1>
+
+<p>list 属性引用包含 input 元素的预定义选项的 datalist 元素。</p>
+
+<form action="/action_page.php">
+	<input list="browsers" name="browser">
+	<datalist id="browsers">
+		<option value="Internet Explorer"></option>
+		<option value="Firefox"></option>
+		<option value="Chrome"></option>
+		<option value="Opera"></option>
+		<option value="Safari"></option>
+	</datalist>
+	<input type="submit" name="Submit">
+</form>
+<br />
+
+<form action="demo_form.asp" method="get">
+	选择图片：<input type="file" name="img" multiple="multiple" />
+	<input type="submit" name="Submit">
+	<p>请尝试在浏览文件时选取一个以上的文件。</p>
+	<br />
+
+	国家代码：<input type="text" name="country_code" pattern="[A-z]{3}" title="三个字母的国家代码" />
+	<input type="submit" />
+</form>
+<br />
+
+<h1>input form 属性</h1>
+
+<p>form 属性指定输入元素所属的表单。</p>
+
+<form action="demo_form.php" id="form1">
+	<label for="fname">First name:</label>
+	<input type="text" id="fname" name="fname"><br /><br />
+	<input type="submit" value="提交">
+</form>
+
+<p>下面的 "Last name" 字段在 form 元素之外，但仍是表单的一部分。</p>
+
+<label for="lname">Last name:</label>
+<input type="text" id="lname" name="lname" form="form1">
+</body>
+</html>
